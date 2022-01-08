@@ -1,14 +1,16 @@
 <template>
+  <Navbar />
   <img alt="Vue logo" src="./assets/logo.png" />
   <router-view />
 </template>
 
 <script>
-import AboutPage from "./modules/pokemon/pages/AboutPage.vue";
+import Navbar from "./modules/shared/components/Navbar.vue";
 
 export default {
   name: "App",
   components: {
+    Navbar,
   },
 };
 </script>
