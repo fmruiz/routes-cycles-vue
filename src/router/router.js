@@ -12,7 +12,14 @@ const routes = [
         /* webpackChunkName: 'About' */ "../modules/pokemon/pages/AboutPage"
       ),
   },
-  { path: "/id", component: PokemonPage },
+  {
+    path: "/:id",
+    component: PokemonPage,
+    props: (route) => {
+      const { id } = route.params;
+      return isNaN(Number(id)) ? { id: 1 } : { id };
+    },
+  },
   { path: "/:pathMatch(.*)*", component: NotPageFound },
 ];
 
